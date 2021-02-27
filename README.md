@@ -1,6 +1,6 @@
 # GRMT
 
-GRMT (Generative Reconstruction of Mutation Tree from scratch) is a tool for tumor mutation tree inference from single-cell DNA sequencing data. GRMT is able to efficiently recover the chronological order of mutations and scale well to large datasets. It exploits BayesOpt (https://github.com/rmcantin/bayesopt) to estimate error rates in mutation data based on the Bayesian optimization algorithm.
+GRMT (Generative Reconstruction of Mutation Tree from scratch) is a tool for tumor mutation tree inference from single-cell DNA sequencing data. GRMT is able to efficiently recover the chronological order of mutations and scale well to large datasets. It exploits [BayesOpt](https://github.com/rmcantin/bayesopt) to estimate error rates in mutation data based on the Bayesian optimization algorithm.
 
 ## Requirements
 
