@@ -1,6 +1,6 @@
 # GRMT
 
-GRMT (Generative Reconstruction of Mutation Tree from scratch) is a tool for tumor mutation tree inference from single-cell DNA sequencing data. GRMT is able to efficiently recover the chronological order of mutations and scale well to large datasets. It exploits [BayesOpt] (https://github.com/rmcantin/bayesopt) to estimate error rates in mutation data based on the Bayesian optimization algorithm.
+GRMT (Generative Reconstruction of Mutation Tree from scratch) is a tool for tumor mutation tree inference from single-cell DNA sequencing data. GRMT is able to efficiently recover the chronological order of mutations and scale well to large datasets. It exploits BayesOpt (https://github.com/rmcantin/bayesopt) to estimate error rates in mutation data based on the Bayesian optimization algorithm.
 
 ## Requirements
 
@@ -43,27 +43,27 @@ The mutational profile of single cells are denoted as a genotype matrix. Each ro
 #### a) Binary: Only presence/absence of a mutation is distinguished.
 The entry at position [i,j] should be
 
-* 0 if mutation i is not observed in cell j,
-* 1 if mutation i is observed in cell j, or
+* 0 if mutation j is not observed in cell i,
+* 1 if mutation j is observed in cell i, or
 * 3 if the genotype information is missing
 
 #### b) Ternary: Heterozygous and homozygous mutations are distinguished.
 The entry at position [i,j] should be
 
-* 0 if mutation i is not observed in cell j,
-* 1 if heterozygous mutation i is observed in cell j
-* 2 if homozygous mutation i is observed in cell j
+* 0 if mutation j is not observed in cell i,
+* 1 if heterozygous mutation j is observed in cell i
+* 2 if homozygous mutation j is observed in cell i
 * 3 if the genotype information is missing
 
 ### 2. Cell names (optional)
 
 A file listing the names of the single cells. Each row specifies the name of a single cell.
-If no such file is specified, the cells are numbered from 1 to n.
+If no such file is specified, the cells are numbered from 1 to N (N is the number of cells).
 
 ### 3. Mutation names (optional)
 
 A file listing the names of the mutations. Each row specifies the name of a mutation.
-If no such file is specified, the mutations are numbered from 1 to n.
+If no such file is specified, the mutations are numbered from 1 to M (M is the number of mutations).
 
 ## Output File
 
@@ -83,9 +83,9 @@ The mutation tree is written to a file in GraphViz format. The base name of the 
 
 * `-m, --mlabel <filename>` Replace \<filename\> with the path to the file containing the names of the mutations.
 
-* `-l, --lambda <Double>` Set \<Double\> to a value between 0.5 and 1. This specifies the value of the hyper-parameter \lambda. The default value is 0.7.
+* `-l, --lambda <Double>` Set \<Double\> to a value between 0.5 and 1. This specifies the value of the hyper-parameter $\lambda$. The default value is 0.7.
 
-* `-K, --kappa <Double>` Set \<Double\> to a positive value. This specifies the value of the hyper-parameter \kappa. The default value is 1.0.
+* `-K, --kappa <Double>` Set \<Double\> to a positive value. This specifies the value of the hyper-parameter $\kappa$. The default value is 1.0.
 
 * `-k, --maxl <INT>`  Set \<INT\> to the desired maximum number of times that a mutation can be lost. The default value is 0.
 
